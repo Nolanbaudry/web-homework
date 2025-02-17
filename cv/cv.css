@@ -1,0 +1,48 @@
+h1 {
+    font-family: times;
+    font-size: large;
+    color: red;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 8px;
+    text-decoration: none;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    transition: all 0.6s ease-in 0.15s;
+}
+
+h1.yes{
+    font-size: x-large;
+
+    background-color: #ccc;
+
+    padding-left: 40px;
+    padding-top: 10px;
+
+    margin-left: 20px;
+    margin-top: 30px;
+
+    border-top-width: 5px;
+    border-top-color: black;
+    border-top-style: solid;
+
+    border-left-width: 10px;
+    border-left-color: red;
+    border-left-style: solid;
+
+    border-top-left-radius: 5px;
+}
+
+a:hover {
+    letter-spacing: 10px;
+    background-color: #fd5e53;
+    padding-left: 10px;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.
