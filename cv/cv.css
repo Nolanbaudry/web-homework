@@ -3,11 +3,9 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-a {
-    transition: all 0.6s ease-in 0.15s;
-}
 
 h1.yes{
+    grid-area: header1;
     font-size: x-large;
 
     background-color: #ccc;
@@ -28,12 +26,23 @@ h1.yes{
 
     border-top-left-radius: 5px;
 }
+.sidebar{
+    background-color: #ccc;
+    grid-area: sidebar;
+
+}
+#img{
+    grid-area: header4;
+    width: 80%;  
+    height: auto;
+}
+
 #experience{
     transition: all 0.6s ease-in 0.15s;
 }
 #experience:hover{
     letter-spacing: 10px;
-    background-color: #fd5e53;
+    background-color: #5a68fa;
     padding-left: 10px;
     text-decoration: none;
     font-weight: 900;
@@ -42,33 +51,39 @@ h1.yes{
 .container {
     display: grid;
     grid-template-columns:
-      1fr 1fr 1fr 1fr;
+      250px 1fr 1fr 1fr;
     grid-template-areas:
-      "header header header header"
+      "sidebar header1 header1 header4"
       "sidebar   main1 main1 main1 "
       "sidebar  main2 main2 main2"
-      "sidebar2 main3 main3 main3 " 
-      "sidebar2 main4 main4 main4 " ;
+      "sidebar main3 main3 main3 "
+      "sidebar main4 main4 main4 " 
+      "sidebar main5 main5 main5" ;
   }
   
   #experience {
       grid-area: main1;
-      background-color: #ffba5a;
   }
+
   #Formation {
       grid-area: main2;
-      background-color: #3282b8;
+   
   }
   #Langues {
       grid-area: main3;
-      background-color: #db3056;
+      
   }
   #Compétences  {
       grid-area: sidebar2;
-      background-color: #7fa998;
   }
-
+  #Centresdintérets{
+    grid-area: sidebar3;
+  }
   #profil { 
     grid-area: sidebar;
+  }
+  .subtitle{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
   }
 
