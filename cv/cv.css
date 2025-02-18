@@ -1,12 +1,4 @@
-h1 {
-    font-family: times;
-    font-size: large;
-    color: red;
-    padding: 10px;
-    border: 1px solid green;
-    border-radius: 8px;
-    text-decoration: none;
-}
+
 body {
     font-family: 'Raleway', sans-serif;
 }
@@ -36,8 +28,10 @@ h1.yes{
 
     border-top-left-radius: 5px;
 }
-
-a:hover {
+#experience{
+    transition: all 0.6s ease-in 0.15s;
+}
+#experience:hover{
     letter-spacing: 10px;
     background-color: #fd5e53;
     padding-left: 10px;
@@ -45,4 +39,36 @@ a:hover {
     font-weight: 900;
 }
 
-.
+.container {
+    display: grid;
+    grid-template-columns:
+      1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header header header"
+      "sidebar   main1 main1 main1 "
+      "sidebar  main2 main2 main2"
+      "sidebar2 main3 main3 main3 " 
+      "sidebar2 main4 main4 main4 " ;
+  }
+  
+  #experience {
+      grid-area: main1;
+      background-color: #ffba5a;
+  }
+  #Formation {
+      grid-area: main2;
+      background-color: #3282b8;
+  }
+  #Langues {
+      grid-area: main3;
+      background-color: #db3056;
+  }
+  #Compétences  {
+      grid-area: sidebar2;
+      background-color: #7fa998;
+  }
+
+  #profil { 
+    grid-area: sidebar;
+  }
+
