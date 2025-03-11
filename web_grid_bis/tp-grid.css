@@ -19,21 +19,27 @@ h2 {
   margin: 10px 0 50px 0;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  background-color:red;
+  background-color:rgb(72, 0, 255);
 }
 
 #grid > div {
   width: 50px;
   height: 50px;
   margin: 5px;
-  background-color: rgb(152, 240, 128);
+  
 }
 
 #instructions {
   width: 600px;
 }
 
-div.yes {
+div.hovered {
   background-color: rgb(197, 49, 56);
-  height : 60px;
+}
+div.hovered_def{
+  background-color: rgb(197, 49, 56);
+}
+
+div.yes {
+  ackground-color: rgb(197, 49, 56);
 }

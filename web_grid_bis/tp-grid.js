@@ -18,57 +18,89 @@ function initialCleanup() {
   }
 }
 
-function Add(){
-  console.log("add")
-  let grid = document.getElementById("grid");
-  for (let i=0; i<10; i++){
-    const div = document.createElement("div");
-    grid.appendChild(div);
-  }
-
-}
 
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-let grilles = document.getElementById("grid")
-
-const changeColor = () => {
-  console.log("changeColor")
-    if (grilles.style.backgroundColor == "blue") {
-       grilles.style.backgroundColor= "red"
-    } else  {
-      grilles.style.backgroundColor = "blue"
-    }
-}
-  
-
-grilles.addEventListener('click', changeColor)
-changeColor()
 
 
 
-})
 document.addEventListener('DOMContentLoaded', () => {
   let grid = document.getElementById("grid");
   let carreaux = grid.getElementsByTagName("div");
+  let button = document.getElementById("btn-add-line")
+
+  function Add(){
+    console.log("add")
+    let grid = document.getElementById("grid");
+    for (let i=0; i<10; i++){
+      const div = document.createElement("div");
+      div.addEventListener("mouseover", (event) => onmouseover (event));
+      div.addEventListener("mouseout", (event) => onmouseout(event));
+      div.addEventListener("click",(event)=> click(event))
+      grid.appendChild(div);
+    }
+  
+  }
+  button.addEventListener('click', Add)
 
 
-  function onmouseover(i, event) {
+  let grilles = document.getElementById("grid")
+  const changeColor = () => {
+    console.log("changeColor")
+      if (grilles.style.backgroundColor == "blue") {
+         grilles.style.backgroundColor= "red"
+      } else  {
+        grilles.style.backgroundColor = "blue"
+      }
+  }
+  grilles.addEventListener('click', changeColor)
+  changeColor()
+
+  function onmouseover( event) {
       let square = event.target; 
-      carreaux[i].classList.add("hovered")
-
-      console.log("Index:", i);   
+      square.classList.add("hovered")
       console.log("Element:", square); 
       console.log("here");
   }
 
-  let n = carreaux.length;
+  function onmouseout(event) {
+    let square = event.target; // Élément déclencheur de l'événement
+    square.classList.remove("hovered"); // Retire la classe "hovered"
+}
 
 
-  for (let i = 0; i < n; i++) {
-      // Utilisation d'une fonction anonyme pour capturer 'i'
-      carreaux[i].addEventListener("mouseover", (event) => onmouseover(i, event));
+  
+  function click(event) {
+    let square = event.target;
+    if (square.classList.contains("hovered_def")) {
+      square.classList.remove("hovered_def");
+    } else {
+      square.classList.add("hovered_def");
+    }
+    console.log("click");
+    console.log(n)
   }
-});
+    
+  
+  let n = carreaux.length;
+for(const div of document.querySelectorAll("#grid > div")) {
+      // Utilisation d'une fonction anonyme pour capturer 'i'
+      div.addEventListener("mouseover", (event) => onmouseover (event));
+      div.addEventListener("mouseout", (event) => onmouseout(event));
+      div.addEventListener("click",(event)=> click(event))
+
+  }
+ 
+
+function remove(){
+
+  let children = grilles.childNodes
+
+}
+
+})
+/* for(const div of document.querySelectorAll("#grid > div")){
+  div.addEventListener("click",(event) => {
+    event.target.style.backgroundColor = randomColor()
+  })*/
